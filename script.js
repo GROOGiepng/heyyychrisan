@@ -3,29 +3,29 @@
 // Function to handle button click events
 function selectOption(option) {
     // Check which option was clicked
-    if (option === 'OMGGG YES GREG') {
-        // Flash rainbow colors
-        flashRainbowColors(function() {
+    if (option === 'yes') {
+        // Flash dark purple colors
+        flashDarkPurpleColors(function() {
             document.getElementById('question').style.display = 'none'; // Hide the question
             displayCatHeart(); // Display the cat-heart.gif
         });
     } else if (option === 'no') {
         // Change text on the "No" button to "You sure?"
         document.getElementById('no-button').innerText = 'You sure?'; 
-        // Increase font size of "OMGG YESS GREGG" button
-        var OMGGYESSGREGGButton = document.getElementById('OMGG YESS GREGG-button');
-        var currentFontSize = window.getComputedStyle(OMGGYESSGREGGButton).getPropertyValue('font-size');
-        var newSize = parseFloat(currentFontSize) * 2; // Increase font size by  * 2px
-        OMGGYESSGREGGButton.style.fontSize = newSize + 'px';
+        // Increase font size of "OMGG YESS GREG" button
+        var yesButton = document.getElementById('yes-button');
+        var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
+        var newSize = parseFloat(currentFontSize) * 2; // Increase font size by *2
+        yesButton.style.fontSize = newSize + 'px';
     } else {
-        // If neither "OMGG YESS GREGG" nor "No" was clicked, show an alert message
+        // If neither "OMGG YESS GREG" nor "No" was clicked, show an alert message
         alert('Invalid option!');
     }
 }
 
-// Function to flash rainbow colors and then execute a callback function
-function flashRainbowColors(callback) {
-    var colors = ['#ff0000', '#ff7f00', '#ffff00', '#00ff00', '#0000ff', '#4b0082', '#9400d3'];
+// Function to flash dark purple colors and then execute a callback function
+function flashDarkPurpleColors(callback) {
+    var colors = ['#2c003e', '#3b005a', '#4a0075', '#5a0091', '#6a00ad', '#7a00c9', '#8b00e5'];
     var i = 0;
     var interval = setInterval(function() {
         document.body.style.backgroundColor = colors[i];
@@ -33,7 +33,7 @@ function flashRainbowColors(callback) {
     }, 200); // Change color every 200 milliseconds
     setTimeout(function() {
         clearInterval(interval);
-        document.body.style.backgroundColor = ''; // Reset background color
+        document.body.style.backgroundColor = '#2c003e'; // Set to a final dark purple
         if (callback) {
             callback();
         }
@@ -78,3 +78,4 @@ function displayCatHeart() {
 
 // Display the cat.gif initially
 displayCat();
+
